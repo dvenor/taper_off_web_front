@@ -2,6 +2,10 @@
   "name": "taper_off_web_front",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "6.2.0",
+    "node": "6.10.3"
+  },
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
