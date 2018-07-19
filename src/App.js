@@ -8,9 +8,10 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Coming soon.</h1>
         </header>
         <p className="App-intro">
+          The taper app to help you find your proper dosing schedule.
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
       </div>
