@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap';
+import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
 
 class TaperForm extends Component {
     constructor(props, context) {
@@ -8,20 +8,23 @@ class TaperForm extends Component {
       this.handleChange = this.handleChange.bind(this);
   
       this.state = {
-        value: ''
+        doseValue: '',
+        stepValue: ''
       };
     }
   
     getValidationState() {
-      const length = this.state.value.length;
-      if (length > 10) return 'success';
-      else if (length > 5) return 'warning';
-      else if (length > 0) return 'error';
+      const length = this.state.doseValue.length;
+      if (length > 1) 
+        return 'success';
+
       return null;
     }
   
     handleChange(e) {
-      this.setState({ value: e.target.value });
+      let change = {};
+      change[e.target.name] = e.target.value;
+      this.setState(change);
     }
   
     render() {
@@ -31,16 +34,28 @@ class TaperForm extends Component {
             controlId="formBasicText"
             validationState={this.getValidationState()}
           >
-            <ControlLabel>Working example with validation.</ControlLabel>
+            <ControlLabel>Baseline dose (mg)</ControlLabel>
             <FormControl
-              type="text"
-              value={this.state.value}
-              placeholder="Enter text"
+              name="doseValue"
+              type="number"
+              value={this.state.doseValue}
+              placeholder="Enter the starting dose in mg"
               onChange={this.handleChange}
             />
             <FormControl.Feedback />
-            <HelpBlock>Validation is based on string length.</HelpBlock>
+            <br/>
+            <ControlLabel>Percent decrease per step (%)</ControlLabel>
+            <FormControl
+              name="stepValue"
+              type="number"
+              value={this.state.stepValue}
+              placeholder="Enter the step down value in Percentage (%)"
+              onChange={this.handleChange}
+            />
+            <FormControl.Feedback />
           </FormGroup>
+          <Button bsStyle="success" type="submit">Build Schedule</Button>&nbsp;
+          <Button bsStyle="info" type="submit">Clear</Button>
         </form>
       );
     }

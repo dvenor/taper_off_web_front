@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Panel } from 'react-bootstrap';
+import { Panel } from 'react-bootstrap';
 import './TaperTable.css';
 
 class TaperTable extends Component {
@@ -11,16 +11,11 @@ class TaperTable extends Component {
   render() {
     return (
       <div className="TaperTable">
-        <header className="TaperTable-header">     
-        </header>
-        <p className="TaperTable-body">
-          This is the table body
-          <Button bsStyle="primary">Primary</Button>
-          <Button bsStyle="success">Success</Button>
+    
           <Panel onClick={this.handleClick}>
-              <Panel.Body>Basic panel example</Panel.Body>
+              <Panel.Body>This is where the table will go.</Panel.Body>
           </Panel>   
-        </p>
+    
       </div>
     );
   }
