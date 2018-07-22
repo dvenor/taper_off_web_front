@@ -31,7 +31,7 @@ class TaperForm extends Component {
             controlId="formBasicText"
             validationState={this.getValidationState()}
           >
-            <ControlLabel>Working example with validation.</ControlLabel>
+            <ControlLabel>Working example with validation. (String Length)</ControlLabel>
             <FormControl
               type="text"
               value={this.state.value}
