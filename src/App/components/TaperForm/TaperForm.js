@@ -6,6 +6,7 @@ class TaperForm extends Component {
       super(props, context);
   
       this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
   
       this.state = {
         doseValue: '',
@@ -15,12 +16,22 @@ class TaperForm extends Component {
   
     getValidationState() {
       const length = this.state.doseValue.length;
-      if (length > 1) 
+      const steplength = this.state.stepValue.length;
+      if (length >= 1 && steplength >= 1) 
         return 'success';
 
       return null;
     }
   
+    handleSubmit(e){
+      e.preventDefault();
+
+      let submission = {};
+      submission['doseValue'] = this.state.doseValue;
+      submission['stepValue'] = this.state.stepValue;
+      this.props.callbackToGetFormData(submission);
+    }
+
     handleChange(e) {
       let change = {};
       change[e.target.name] = e.target.value;
@@ -29,7 +40,7 @@ class TaperForm extends Component {
   
     render() {
       return (
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <FormGroup
             controlId="formBasicText"
             validationState={this.getValidationState()}
@@ -39,7 +50,7 @@ class TaperForm extends Component {
               name="doseValue"
               type="number"
               value={this.state.doseValue}
-              placeholder="Enter the starting dose in mg"
+              placeholder="Starting dose"
               onChange={this.handleChange}
             />
             <FormControl.Feedback />
@@ -49,13 +60,13 @@ class TaperForm extends Component {
               name="stepValue"
               type="number"
               value={this.state.stepValue}
-              placeholder="Enter the step down value in Percentage (%)"
+              placeholder="Step down value"
               onChange={this.handleChange}
             />
             <FormControl.Feedback />
           </FormGroup>
-          <Button bsStyle="success" type="submit">Build Schedule</Button>&nbsp;
-          <Button bsStyle="info" type="submit">Clear</Button>
+          <Button bsStyle="success" type="submit" disabled={!this.getValidationState()} >Build Schedule</Button>&nbsp;
+          <Button bsStyle="info" >Clear</Button>
         </form>
       );
     }

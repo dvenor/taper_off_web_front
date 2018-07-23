@@ -6,6 +6,11 @@ import TaperForm from './components/TaperForm/TaperForm';
 import MainMessage from './components/MainMessage/MainMessage';
 
 class App extends Component {
+
+  processFormData = (dataFromChild) => {
+    alert(dataFromChild.doseValue);
+  }
+
   render() {
 
     const panelStyle = {
@@ -18,21 +23,21 @@ class App extends Component {
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossOrigin="anonymous"></link>
         <header className="App-header">
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <h1 className="App-title">SSRI Discontinuation</h1>
+          <h1 className="App-title">Taper Off - Assisting with SSRI Discontinuation</h1>
         </header>
-        <Grid>
+        <Grid className="container-fluid">
           <Row>
             &nbsp;
           </Row>
           <Row>
-            <Col xs={3}>
+            <Col xs={12} md={3}>
               <Panel style={panelStyle}>
                 <Panel.Body>
-                  <TaperForm></TaperForm>
+                  <TaperForm callbackToGetFormData={this.processFormData}></TaperForm>
                 </Panel.Body>
               </Panel>
             </Col>
-            <Col xs={9}>
+            <Col xs={12} md={9}>
               <Panel>
                 <Panel.Body>
                   <MainMessage></MainMessage>
