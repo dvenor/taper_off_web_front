@@ -7,11 +7,14 @@
     "node": "6.10.3"
   },
   "dependencies": {
+    "@types/node": "^10.5.7",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
-    "react-bootstrap-table-next": "^0.1.15",
+    "react-bootstrap-table-next": "^1.0.0",
+    "react-bootstrap-table2-paginator": "^1.0.0",
     "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-spinners": "^0.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
