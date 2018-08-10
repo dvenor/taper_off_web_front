@@ -7,11 +7,13 @@ class TaperForm extends Component {
   
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
-  
+
       this.state = {
         doseValue: '',
         stepValue: ''
       };
+
+      this.baseState = this.state; 
     }
   
     getValidationState() {
@@ -36,6 +38,10 @@ class TaperForm extends Component {
       let change = {};
       change[e.target.name] = e.target.value;
       this.setState(change);
+    }
+
+    resetForm = () => {
+      this.setState(this.baseState)
     }
   
     render() {
@@ -66,7 +72,7 @@ class TaperForm extends Component {
             <FormControl.Feedback />
           </FormGroup>
           <Button bsStyle="success" type="submit" disabled={!this.getValidationState()} >Build Schedule</Button>&nbsp;
-          <Button bsStyle="info" >Clear</Button>
+          <Button bsStyle="info"  onClick={this.resetForm} type="button" >Clear</Button>
         </form>
       );
     }

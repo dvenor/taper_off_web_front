@@ -1,0 +1,11 @@
+.TaperTable{
+    text-align: left;
+}
+
+ul.pagination.react-bootstrap-table-page-btns-ul {
+    margin: 0;
+}
+
+div.react-bootstrap-table-pagination-list.col-md-6.col-xs-6.col-sm-6.col-lg-6 {
+    text-align: right;
+}
