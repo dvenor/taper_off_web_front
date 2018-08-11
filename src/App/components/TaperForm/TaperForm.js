@@ -51,7 +51,6 @@ class TaperForm extends Component {
             controlId="formBasicText"
             validationState={this.getValidationState()}
           >
-<<<<<<< HEAD
             <ControlLabel>Baseline dose (mg)</ControlLabel>
             <FormControl
               name="doseValue"
@@ -63,9 +62,6 @@ class TaperForm extends Component {
             <FormControl.Feedback />
             <br/>
             <ControlLabel>Percent decrease per step (%)</ControlLabel>
-=======
-            <ControlLabel>Working example with validation. (String Length)</ControlLabel>
->>>>>>> 73f13127efabe387d840088974ed528ffc5e7ade
             <FormControl
               name="stepValue"
               type="number"
