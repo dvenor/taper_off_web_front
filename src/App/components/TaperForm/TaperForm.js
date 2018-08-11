@@ -56,17 +56,17 @@ class TaperForm extends Component {
               name="doseValue"
               type="number"
               value={this.state.doseValue}
-              placeholder="Starting dose"
+              placeholder="Enter starting dose"
               onChange={this.handleChange}
             />
             <FormControl.Feedback />
             <br/>
-            <ControlLabel>Percent decrease per step (%)</ControlLabel>
+            <ControlLabel>Percent decrease per week (%)</ControlLabel>
             <FormControl
               name="stepValue"
               type="number"
               value={this.state.stepValue}
-              placeholder="Step down value"
+              placeholder="Enter percent decrease"
               onChange={this.handleChange}
             />
             <FormControl.Feedback />
