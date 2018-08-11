@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './MainMessage.css'
 
 class MainMessage extends Component {
     render() {
@@ -9,14 +10,20 @@ class MainMessage extends Component {
 
         return(
             <div>
-           <div className="App-intro" style={messageStyle}>
-              Over 10 million americans regularly take anti-depresant medication.  It is an effective treatment option
-              and has helped many people lead productive, happy lives. 
-              <br/><br/>
-              However, physicians don't normally spend the time to explain the process to ween off these medications.
-              This application is a tool to assist in finding the proper taper schedule.
-              <br/><br/>
-              ALWAYS CONSULT YOUR DOCTOR BEFORE MAKING ANY CHANGES TO YOUR MEDICATION!   
+            <div className="App-intro" style={messageStyle}>
+                This page builds the <i>Slide Method of Microtapering</i> by Brassmonkey
+                found on <a href=" https://www.survivingantidepressants.org/">https://www.survivingantidepressants.org</a>.
+                It decreases values by a set percentage every week for 4 weeks 
+                followed by a two week hold. The tapered amount gets smaller and smaller over time, kind of like compound 
+                interest in reverse.  
+                <br/><br/>
+                <h4>Directions:</h4>  
+                
+                1. Enter your starting dose in mg
+                <br/>
+                2. Enter the percentage to decrease per week 
+                <br/>
+                3. Click build schedule    
             </div>
     
       </div>
