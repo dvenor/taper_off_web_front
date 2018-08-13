@@ -19,7 +19,7 @@ class TaperForm extends Component {
     getValidationState() {
       const length = this.state.doseValue.length;
       const steplength = this.state.stepValue.length;
-      if (length >= 1 && steplength >= 1) 
+      if (length >= 1 & steplength >= 1) 
         return 'success';
 
       return null;
@@ -56,6 +56,7 @@ class TaperForm extends Component {
               name="doseValue"
               type="number"
               value={this.state.doseValue}
+              step={0.01}
               placeholder="Enter starting dose"
               onChange={this.handleChange}
             />
@@ -66,6 +67,7 @@ class TaperForm extends Component {
               name="stepValue"
               type="number"
               value={this.state.stepValue}
+              step={0.01}
               placeholder="Enter percent decrease"
               onChange={this.handleChange}
             />

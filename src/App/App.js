@@ -66,7 +66,7 @@ class App extends Component {
         }
         schedule.push(doseLine);
         
-        if(microcycle == resetWeek){
+        if(microcycle === resetWeek){
             currentDose = microcycleDose;
             microcycle = 1;
         }
@@ -74,7 +74,7 @@ class App extends Component {
             microcycle += 1;
         }
       
-        if(currentWeek == 52) {
+        if(currentWeek === 52) {
             currentWeek = 1;
             currentYear +=1;
             continue;

@@ -11,7 +11,7 @@ class MainMessage extends Component {
         return(
             <div>
             <div className="App-intro" style={messageStyle}>
-                This page builds the <i>Slide Method of Microtapering</i> by Brassmonkey
+                This tool builds the <i>Slide Method of Microtapering</i> by Brassmonkey
                 found on <a href=" https://www.survivingantidepressants.org/">https://www.survivingantidepressants.org</a>.
                 It decreases values by a set percentage every week for 4 weeks 
                 followed by a two week hold. The tapered amount gets smaller and smaller over time, kind of like compound 
