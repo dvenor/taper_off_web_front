@@ -26,13 +26,18 @@ class App extends Component {
     this.setState({schedule: []});
     
     setTimeout(() => {
-      this.setState({schedule: this.createSchedule(dataFromChild.doseValue, dataFromChild.stepValue, 2)});
+      this.setState(
+        {
+          schedule: 
+            this.createSchedule(dataFromChild.doseValue, dataFromChild.stepValue, dataFromChild.holdWeeksValue)
+        });
       this.setState({loading: false});
     }, 1000);
     
   }
 
   createSchedule(initialDose, pctDecrease, holdWeeks) {
+    
     let schedule = [];
     const endDose = 0.1;
 
@@ -45,7 +50,7 @@ class App extends Component {
     let microcycle = 1;
     let microcycleDose = initialDose;
     let currentDose = initialDose;
-    let resetWeek = holdWeeks + 4;
+    let resetWeek = parseInt(holdWeeks) + 4;
         
     let doseLine = {
       yearNumber: currentYear,
