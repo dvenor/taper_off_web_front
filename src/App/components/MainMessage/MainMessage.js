@@ -23,7 +23,7 @@ class MainMessage extends Component {
                 <br/>
                 2. Enter the percentage to decrease per week 
                 <br/>
-                3. Enter the number of weeks to hold at the end of the 4 week cycyle
+                3. Enter the number of weeks to hold at the end of the 4 week cycle
                 <br/>
                 4. Click build schedule    
             </div>
