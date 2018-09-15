@@ -25,7 +25,7 @@ class MainMessage extends Component {
                 <br/>
                 3. Enter the number of weeks to hold at the end of the 4 week cycyle
                 <br/>
-                3. Click build schedule    
+                4. Click build schedule    
             </div>
     
       </div>
