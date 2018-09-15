@@ -10,7 +10,8 @@ class TaperForm extends Component {
 
       this.state = {
         doseValue: '',
-        stepValue: ''
+        stepValue: '',
+        holdWeeksValue: ''
       };
 
       this.baseState = this.state; 
@@ -19,8 +20,11 @@ class TaperForm extends Component {
     getValidationState() {
       const length = this.state.doseValue.length;
       const steplength = this.state.stepValue.length;
-      if (length >= 1 & steplength >= 1) 
+      const holdlength = this.state.holdWeeksValue.length;
+
+      if (length >= 1 && steplength >= 1 && holdlength >=1) {
         return 'success';
+      } 
 
       return null;
     }
@@ -31,6 +35,7 @@ class TaperForm extends Component {
       let submission = {};
       submission['doseValue'] = this.state.doseValue;
       submission['stepValue'] = this.state.stepValue;
+      submission['holdWeeksValue'] = this.state.holdWeeksValue;
       this.props.callbackToGetFormData(submission);
     }
 
@@ -49,8 +54,7 @@ class TaperForm extends Component {
         <form onSubmit={this.handleSubmit}>
           <FormGroup
             controlId="formBasicText"
-            validationState={this.getValidationState()}
-          >
+            validationState={this.getValidationState()}>
             <ControlLabel>Baseline dose (mg)</ControlLabel>
             <FormControl
               name="doseValue"
@@ -69,6 +73,16 @@ class TaperForm extends Component {
               value={this.state.stepValue}
               step={0.01}
               placeholder="Enter percent decrease"
+              onChange={this.handleChange}
+            />
+            <br/>
+            <ControlLabel>Number of weeks to hold</ControlLabel>
+            <FormControl
+              name="holdWeeksValue"
+              type="number"
+              value={this.state.holdWeeksValue}
+              step={1}
+              placeholder="Enter hold weeks"
               onChange={this.handleChange}
             />
             <FormControl.Feedback />
